@@ -1,0 +1,41 @@
+The all pair shortest path algorithm is also known as Floyd-Warshall algorithm is used to find all pair shortest path problem from a given weighted graph. As a result of this algorithm, it will generate a matrix, which will represent the minimum distance from any node to all other nodes in the graph.
+
+
+
+
+
+
+Question-02:Ans
+
+Yes, we can solve the Single-Source Shortest Path (SSSP) problem on an unweighted graph using Dijkstra's algorithm with a small modification.
+
+Dijkstra's algorithm is designed for weighted graphs, where the edge weights represent the cost of traversing that edge. In the case of an unweighted graph, all edge weights are the same (i.e., 1), and we can simplify the algorithm to use a breadth-first search (BFS) instead.
+
+The basic idea is to replace the priority queue used in Dijkstra's algorithm with a queue for storing vertices to be processed in BFS order. Instead of selecting the vertex with the smallest distance, we simply process vertices in the order in which they are discovered. We can still maintain the distance array to keep track of the distance of each vertex from the source.
+
+Here's the modified algorithm for finding SSSP on an unweighted graph using Dijkstra:
+
+Initialize the distance of the source vertex to 0 and the distance of all other vertices to infinity.
+Add the source vertex to the queue.
+While the queue is not empty, remove the front vertex and iterate over its neighbors.
+If the distance of a neighbor vertex is infinity, set its distance to the distance of the current vertex plus 1 and add it to the back of the queue.
+If the distance of a neighbor vertex is not infinity, do nothing.
+Repeat steps 3-5 until the queue is empty.
+This modified algorithm has a time complexity of O(V+E), where V is the number of vertices and E is the number of edges in the graph. Since we are using a queue instead of a priority queue, the time complexity of the algorithm does not depend on the edge weights, making it more efficient for unweighted graphs.
+
+
+
+
+
+
+
+
+Yes, this recurrence relation can be solved using dynamic programming.
+
+The reasoning is as follows:
+
+Optimal substructure: The problem can be divided into subproblems, where the optimal solution to fun(x) depends only on the optimal solutions to fun(x-1) and fun(x+1).
+
+Overlapping subproblems: The subproblems occur repeatedly, as fun(x-1) and fun(x+1) are evaluated multiple times.
+
+Therefore, we can use dynamic programming to solve this recurrence relation. We can use a bottom-up approach, starting from fun(0) and computing fun(x) for all x up to the desired value. We can store the solutions to each subproblem in an array or table, and reuse these solutions as needed to compute the solution to the larger problem.

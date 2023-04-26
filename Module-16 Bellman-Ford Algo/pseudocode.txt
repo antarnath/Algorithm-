@@ -1,0 +1,24 @@
+// Pseudocode : Bellman-Ford
+Time complexity = O(|V| * |E|) = O(n^3)
+Space complexity = O(n)
+
+Input -> A weighted graph & a src node (with no negative cycles)
+Output -> Shortest distance from src node to all other node
+/*
+u ----> v
+- if d[u] + c(u, v) < d[v]:
+    - d[v] = d[u] + c(u, v)
+*/
+
+
+- create a distance array "d" with all values to infinity
+- d[src] = 0
+
+
+- for i=1 to n-1:
+    - for all edge e(u, v, w):
+        - if d[u] + c(u, v) < d[v]:
+            - d[v] = d[u] + c(u, v)
+
+- print the distanc array "d"
+
